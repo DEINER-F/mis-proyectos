@@ -30,7 +30,7 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 //   • Pegalo en la constante ENDPOINT.
 // -----------------------------------------------------------------
 
-const ENDPOINT = "https://sheetdb.io/api/v1/mf0o6raw57hhh"; //  ⬅️  Sustituye AQUÍ
+const ENDPOINT = "https://sheetdb.io/api/v1/gwofmuto20okx"; //  ⬅️  Sustituye AQUÍ
 const form   = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 
@@ -38,15 +38,16 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   status.textContent = "Enviando…";
 
-  const payload = {
+ const payload = {
     data: {
-      Fecha:   new Date().toLocaleString(),
-      Nombre:  form.name.value,
-      Correo:  form.email.value,
-      Telefono:form.phone.value,
-      Mensaje: form.message.value
+      FECHA:   new Date().toLocaleString(),
+      NOMBRE:  form.name.value,
+      CORREO:  form.email.value,
+      TELEFONO:form.phone.value,
+      MENSAJES: form.message.value
     }
   };
+
 
   try {
     const res = await fetch(ENDPOINT, {
