@@ -67,3 +67,10 @@ form.addEventListener("submit", async (e) => {
     status.textContent = "Hubo un problema. Intenta nuevamente o contáctanos.";
   }
 });
+
+document.addEventListener("input", (e) => {
+  if (e.target.classList.contains("solo-numero")) {
+    // reemplaza cualquier carácter que NO sea 0‑9
+    e.target.value = e.target.value.replace(/[^0-9]/g, "");
+  }
+});

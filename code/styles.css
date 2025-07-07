@@ -35,6 +35,11 @@ label{font-weight:600}
 input,textarea{padding:.75rem 1rem;border:1px solid #ccd1d9;border-radius:.5rem;font-size:1rem;font-family:inherit}
 input:focus,textarea:focus{outline:none;border-color:#ffbf00;box-shadow:0 0 0 2px rgba(255,191,0,.2)}
 textarea{resize:vertical;min-height:150px}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* ---- Footer ---- */
 footer{background:#0d1d3d;color:#fff;text-align:center;padding:2rem}
@@ -42,3 +47,12 @@ footer{background:#0d1d3d;color:#fff;text-align:center;padding:2rem}
 /* ---- Reveal Animations ---- */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
+
+
+/* quita las flechas del input de tipo number en Chrome */
+.solo-numero::-webkit-inner-spin-button,
+.solo-numero::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
