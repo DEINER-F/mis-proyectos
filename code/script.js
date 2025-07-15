@@ -2,13 +2,10 @@
 //  script.js – Versión nube (SheetDB)
 // ================================
 
-// 1) Renderizar íconos Lucide
 lucide.createIcons();
 
-// 2) Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// 3) Animación de revelado al hacer scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -20,20 +17,11 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 4) Envío de formulario a Google Sheets vía SheetDB
-// -----------------------------------------------------------------
-//   Paso previo:  
-//   • Crea una hoja de cálculo en Google Sheets con las columnas   
-//     Fecha | Nombre | Correo | Telefono | Mensaje                
-//   • Conéctala a https://sheetdb.io (es gratis hasta 500 filas).  
-//   • Copia tu endpoint: https://sheetdb.io/api/v1/<TU_API_KEY>
-//   • Pegalo en la constante ENDPOINT.
-// -----------------------------------------------------------------
 
-const ENDPOINT = "https://sheetdb.io/api/v1/gwofmuto20okx"; //  ⬅️  Sustituye AQUÍ
+const ENDPOINT = "https://sheetdb.io/api/v1/gwofmuto20okx"; 
 const form   = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
-
+//Datos del cliente
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   status.textContent = "Enviando…";
